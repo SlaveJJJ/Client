@@ -1,0 +1,158 @@
+번개장터 & 당근마켓
+
+
+[테이블]
+
+[User] //사용자
+ID
+userID
+password
+fistName
+lastName
+sex
+phone
+juso
+following
+followers
+Posts:[Post]
+likes:[Like]
+comments:[Comment]
+rooms:[Room]
+itsMe:Boolean
+amIFollowing:Boolean
+
+[userProfile] //내정보
+ID
+users
+posts
+likes
+comments
+
+[Post] //게시물
+ID
+files:[File]
+postName
+category
+Trading area
+state
+price
+bio
+
+
+[Like] //찜(좋아요)
+ID
+users
+posts
+
+[Room] // 문의(구매)
+ID
+participants
+message
+
+[Commit] // 댓글
+ID
+TEXT
+users
+posts
+
+[File] // 파일
+ID
+url
+post
+
+[Message] //문의방
+ID
+TEXT
+from
+to
+room
+
+[Category] //카테고리
+ID
+categorys
+
+
+--기능--
+* 알림기능
+* 카테고리
+* 지역별 상품 정렬
+- 검색
+- 상점명(유저명),지역명,상품이름
+
+(사용자) 
+* 회원가입
+- 아이디
+- 비밀번호 
+- 성
+- 이름
+- 전화번호
+- 성별
+- 주소
+
+* 로그인/로그아웃 (SNS?/본인인증?)
+
+* 판매하기
+
+* 내상점(내정보)
+    - 내가 올린상품(확인/수정/삭제)
+    - 내가 작성한 댓글
+    - 팔로워/팔로잉 확인
+    - 찜한 목록
+    - 계정정보 수정
+
+(포스트)
+* 상품목록
+    - 상품정보(상태/교환/배송비/거래지역?/가격/카테고리/제목/이미지/설명)
+    - 상품사진
+    - 댓글
+    - 문의(구매)
+    - 추천상품
+    - 게시물 올린시간
+
+
+
+--화면뷰--
+
+*헤더
+- 로고 - header
+- 검색창 - header
+- 판매버튼/내상점/문의톡 (로그아웃상태일시 클릭하면 로그인화면) - header
+- 카테고리 선택창 -header
+
+*푸터
+- 회사정보 - footer
+
+*메인페이지
+- 로그인/회원가입/내상점 버튼 && 로그아웃/알림/내상점
+    header
+- 광고(사진/이벤트?)
+- 포스트 목록(제목/가격/작성시간)
+    footer
+
+    
+*포스터(게시물)
+    header
+- 이미지
+- 제목
+- 좋아요/조회수/작성시간
+- 상품상태/교환여부/배송비/거래지역
+- 좋아요버튼/연락하기버튼/바로구매버튼
+- 연관상품
+- 상품정보/상품문의(댓글)
+    footer
+
+
+*판매하기
+    header
+- 상품등록/상품관리/구매판매내역
+- 상품등록(이미지업로드/제목/카테고리/거래지역/상태/교환/가격/설명/수량) 등록하기버튼
+- 상품관리(사진/판매상태/상품명/가격/찜/댓글/수정일/기능) 검색창(10개씩/전체),페이지네이션
+- 구매/판매/내역 (구매내역/판매내역/정산내역)
+    footer
+
+*내상점(내정보)
+    header
+- 이미지/이름/상점오픈일/상점방문수/상품판매횟수/택배발송횟수
+- 상품/상점문의/찜/상점후기/팔로잉/팔로워
+- 지역인증?
+    footer
