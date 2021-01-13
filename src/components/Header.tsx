@@ -1,56 +1,62 @@
 import React from "react";
-import { Form, Span, Wrapper } from "../styles/style";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
+import styled from "styled-components";
 
-import TextField from "@material-ui/core/TextField";
+const HeaderSy = styled.header`
+  width: 100%;
+  border: 1px solid red;
+  display: felx;
+  justify-content: center;
+  align-items: center;
+`;
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        "& > *": {
-            margin: theme.spacing(-0.5),
-            width: "35ch",
-        },
-    },
-}));
+const HeaderWrapper = styled.div`
+  border: 1px solid blue;
+  min-width: 65%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const HeaderColum = styled.div`
+  display: flex;
+  border: 2px solid green;
+`;
+
+const AColum = styled.a`
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: rgb(102, 102, 102);
+  padding: 0px 15px;
+  position: relative;
+  line-height: 1.4;
+`;
+const ButtonColum = styled.button`
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: rgb(102, 102, 102);
+  padding: 0px 15px;
+  position: relative;
+  line-height: 1.4;
+  border: 0;
+  outline: 0;
+`;
 
 export const Header = () => {
-    const classes = useStyles();
-    return (
-        <>
-            <Wrapper
-                width={"100%"}
-                height={"70px"}
-                borderbottem={"1px solid rgba(34,90,89,0.2);"}
-                margin={"10px 0 0 0"}
-                display={"flex"}
-                justifyContent={"center"}
-                alignItems={"center"}
-            >
-                <Wrapper width={"1000px"} height={"70px"} display={"flex"} margin={"10px 0 0 0"}>
-                    <Wrapper>
-                        <img src={"/image/logo.png"} style={{ width: "43px" }} />
-                        <img src={"/image/logoTitle.png"} style={{ width: "130px" }} />
-                    </Wrapper>
-                    <Form className={classes.root} noValidate autoComplete="off">
-                        <TextField
-                            id="standard-basic"
-                            label="상품명,지역명,@상점명 입력"
-                            size="medium"
-                            style={{ marginLeft: "200px" }}
-                        />
-                    </Form>
-                    <Button
-                        variant="contained"
-                        color="secondary"
-                        style={{ marginLeft: "200px", width: "120px", height: "50px" }}
-                    >
-                        <Span fontsize={"20px"} fontwe={"600"}>
-                            로그인
-                        </Span>
-                    </Button>
-                </Wrapper>
-            </Wrapper>
-        </>
-    );
+  return (
+    <>
+      <HeaderSy>
+        <HeaderWrapper>
+          <HeaderColum>
+            <AColum>로그인/회원가입</AColum>
+            <ButtonColum>내상점</ButtonColum>
+          </HeaderColum>
+          <HeaderColum>
+            <ButtonColum>즐겨찾기</ButtonColum>
+            <ButtonColum>내상점</ButtonColum>
+          </HeaderColum>
+        </HeaderWrapper>
+      </HeaderSy>
+    </>
+  );
 };
