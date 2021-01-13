@@ -1,5 +1,13 @@
 import React from "react";
-import { Div, Header, Img, Wrapper, A, Button, Input } from "../styles/style";
+import {
+  Div,
+  Header,
+  Img,
+  Wrapper,
+  A,
+  Button,
+  Input,
+} from "../styles/HeaderStyle";
 
 export const HeaderTop = () => {
   return (
